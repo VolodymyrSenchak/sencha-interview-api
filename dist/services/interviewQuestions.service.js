@@ -15,7 +15,7 @@ const models_1 = require("../models");
 class InterviewQuestionsService {
     constructor() {
         this.db = (0, supabaseDb_1.getSupabaseClient)();
-        this.interviewQuestionsTable = 'interview_questions';
+        this.interviewQuestionsTable = 'sencha_interview_questions';
     }
     getInterviewQuestions(userId) {
         return __awaiter(this, void 0, void 0, function* () {

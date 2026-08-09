@@ -21,11 +21,11 @@ const requestUtils_1 = require("../utils/requestUtils");
 const useInterviewQuestionsRoutes = () => {
     const router = (0, express_1.Router)();
     const expSrv = () => serviceFactory_1.default.getService(interviewQuestions_service_1.InterviewQuestionsService);
-    router.get("/interview-questions", validateToken_1.validateToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    router.get("/", validateToken_1.validateToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const result = yield expSrv().getInterviewQuestions((0, requestUtils_1.getUserId)(req));
         (0, requestUtils_1.setResResult)(res, result, r => r === null || r === void 0 ? void 0 : r.payload);
     }));
-    router.post("/interview-questions", validateToken_1.validateToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    router.post("/", validateToken_1.validateToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const result = yield expSrv().saveInterviewQuestions({
             userId: (0, requestUtils_1.getUserId)(req),
             payload: req.body,
