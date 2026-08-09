@@ -8,12 +8,12 @@ export const useInterviewQuestionsRoutes = () => {
   const router = Router();
   const expSrv = () => serviceFactory.getService(InterviewQuestionsService);
 
-  router.get("/interview-questions", validateToken, async (req, res) => {
+  router.get("/", validateToken, async (req, res) => {
     const result = await expSrv().getInterviewQuestions(getUserId(req));
     setResResult(res, result, r => r?.payload);
   });
 
-  router.post("/interview-questions", validateToken, async (req, res) => {
+  router.post("/", validateToken, async (req, res) => {
     const result = await expSrv().saveInterviewQuestions({
       userId: getUserId(req),
       payload: req.body,
