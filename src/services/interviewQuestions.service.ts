@@ -5,7 +5,7 @@ import { InterviewQuestionsModel} from "../models/interview-questions";
 export class InterviewQuestionsService {
   private readonly db = getSupabaseClient();
 
-  private readonly interviewQuestionsTable = 'interview_questions';
+  private readonly interviewQuestionsTable = 'sencha_interview_questions';
 
   async getInterviewQuestions(userId: string): Promise<Result<InterviewQuestionsModel>> {
     const { data, error } = await this.db
